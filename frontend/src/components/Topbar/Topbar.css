@@ -1,0 +1,234 @@
+/* PATH: src/components/Topbar/Topbar.css */
+.topbar {
+    height: 64px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+.topbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 17px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.topbar-logo strong {
+    color: var(--accent);
+}
+
+.topbar-logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #4255ff, #7b68ee);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar-search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-page);
+    border: 1.5px solid var(--border);
+    border-radius: 99px;
+    padding: 0 16px;
+    height: 40px;
+    transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.topbar-search:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.topbar-search svg {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.topbar-search input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.topbar-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.topbar-upgrade {
+    padding: 8px 16px;
+    border-radius: 99px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: white;
+}
+
+.topbar-upgrade:hover {
+    filter: brightness(1.08);
+}
+
+.topbar-create {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 99px;
+    background: var(--accent);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.topbar-create:hover {
+    filter: brightness(1.08);
+}
+
+.topbar-avatar-wrap {
+    position: relative;
+}
+
+.topbar-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color var(--ease);
+}
+
+.topbar-avatar:hover {
+    border-color: var(--accent);
+}
+
+.topbar-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    min-width: 240px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .12);
+    z-index: 1000;
+    overflow: hidden;
+    animation: dropIn .15s ease;
+}
+
+@keyframes dropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px)scale(.97)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.topbar-drop-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 16px 12px;
+}
+
+.topbar-drop-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.topbar-drop-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.topbar-drop-email {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    word-break: break-all;
+}
+
+.topbar-drop-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 0;
+}
+
+.topbar-drop-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    transition: background var(--ease), color var(--ease);
+}
+
+.topbar-drop-item:hover {
+    background: var(--bg-page);
+    color: var(--text-primary);
+}
+
+.topbar-drop-item.danger {
+    color: var(--danger);
+}
+
+.topbar-drop-item.danger:hover {
+    background: #fff0f0;
+}

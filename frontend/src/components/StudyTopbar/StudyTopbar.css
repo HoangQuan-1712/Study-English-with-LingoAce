@@ -1,0 +1,179 @@
+/* PATH: src/components/StudyTopbar/StudyTopbar.css */
+.study-topbar {
+    height: 64px;
+    background: var(--bg-card);
+    border-bottom: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    flex-shrink: 0;
+}
+
+.study-topbar-left {
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.study-topbar-center {
+    flex: 1;
+    text-align: center;
+    overflow: hidden;
+}
+
+.study-topbar-right {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.study-topbar-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Mode button */
+.study-mode-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: var(--bg-page);
+    cursor: pointer;
+    transition: all var(--ease);
+}
+
+.study-mode-btn:hover {
+    border-color: var(--accent);
+    background: var(--accent-light);
+}
+
+.study-mode-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.study-mode-btn svg {
+    transition: transform var(--ease);
+    color: var(--text-muted);
+}
+
+.study-mode-btn svg.rotated {
+    transform: rotate(180deg);
+}
+
+/* Dropdown */
+.study-mode-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    min-width: 220px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .12);
+    z-index: 300;
+    overflow: hidden;
+    animation: dropIn .15s ease;
+}
+
+@keyframes dropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.study-mode-drop-title {
+    padding: 12px 14px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--text-muted);
+}
+
+.study-mode-drop-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 0;
+}
+
+.study-mode-drop-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    transition: background var(--ease), color var(--ease);
+}
+
+.study-mode-drop-item:hover {
+    background: var(--bg-page);
+    color: var(--text-primary);
+}
+
+.study-mode-drop-item.active {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.study-mode-drop-item.home-item {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.study-mode-drop-check {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Icon buttons */
+.study-topbar-icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--ease);
+}
+
+.study-topbar-icon-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.close-btn:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}

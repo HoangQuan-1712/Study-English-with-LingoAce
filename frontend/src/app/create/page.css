@@ -1,0 +1,358 @@
+/* PATH: src/app/create/page.css */
+
+.create-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.create-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -.4px;
+}
+
+.create-field-title {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid var(--border);
+    outline: none;
+    transition: border-color var(--ease);
+    margin-bottom: 12px;
+}
+
+.create-field-title:focus {
+    border-bottom-color: var(--accent);
+}
+
+.create-field-title::placeholder {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.create-field-desc {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border);
+    outline: none;
+    resize: none;
+    margin-bottom: 24px;
+    transition: border-color var(--ease);
+}
+
+.create-field-desc:focus {
+    border-bottom-color: var(--accent);
+}
+
+/* Language row */
+.create-lang-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.create-lang-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.create-lang-group label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--text-muted);
+}
+
+.create-lang-select {
+    padding: 8px 12px;
+    background: var(--bg-page);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    outline: none;
+    cursor: pointer;
+}
+
+.create-lang-select:focus {
+    border-color: var(--accent);
+}
+
+/* Card */
+.create-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px 20px;
+    margin-bottom: 12px;
+    transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.create-card:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.create-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.create-card-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.create-card-del {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    transition: color var(--ease), background var(--ease);
+}
+
+.create-card-del:hover {
+    color: var(--danger);
+    background: #fff0f0;
+}
+
+.create-card-body {}
+
+.create-card-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 16px;
+    align-items: start;
+}
+
+.create-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+}
+
+.create-input-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.create-input-group label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+}
+
+.create-lang-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 2px 7px;
+    border-radius: 99px;
+}
+
+.create-input-group input {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border);
+    outline: none;
+    transition: border-color var(--ease);
+}
+
+.create-input-group input:focus {
+    border-bottom-color: var(--accent);
+}
+
+.create-input-group input::placeholder {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.create-phonetic {
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 10px;
+    border-radius: 99px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    margin-top: 4px;
+}
+
+/* Suggestions */
+.create-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.create-suggestion-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 10px 14px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--ease);
+    border-bottom: 1px solid var(--border);
+}
+
+.create-suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.create-suggestion-item:hover {
+    background: var(--accent-light);
+}
+
+.create-sugg-def {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.create-sugg-phonetic {
+    font-size: 11px;
+    color: var(--accent);
+}
+
+/* Image */
+.create-image-col {
+    width: 80px;
+}
+
+.create-image-btn {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed var(--border-strong);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 11px;
+    transition: all var(--ease);
+}
+
+.create-image-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.create-image-preview {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.create-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.create-image-preview button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, .6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add button */
+.create-add-btn {
+    width: 100%;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 2px dashed var(--border-strong);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--ease);
+    margin-top: 4px;
+}
+
+.create-add-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+}
+
+@media (max-width:640px) {
+    .create-card-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .create-image-col {
+        display: none;
+    }
+}

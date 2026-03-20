@@ -1,0 +1,365 @@
+/* ═══════════════════════════════
+   LEARN MODE
+   ═══════════════════════════════ */
+
+/* Streak banner */
+.learn-streak-banner {
+    background: linear-gradient(135deg, #ff9500, #ff6b00);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 99px;
+    margin-bottom: 20px;
+    animation: pulse .6s ease;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.05)
+    }
+}
+
+/* Card */
+.learn-card {
+    width: 100%;
+    max-width: 680px;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 24px;
+    padding: 40px 48px;
+    box-shadow: 0 8px 40px rgba(66, 85, 255, .1);
+    margin-bottom: 20px;
+}
+
+/* Term box */
+.learn-term-box {
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 1.5px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.learn-term-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.learn-term {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -.6px;
+    line-height: 1.2;
+}
+
+.learn-pron {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+/* Question label */
+.learn-type-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+/* Multiple choice */
+.learn-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.learn-opt {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: var(--bg-page);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all .15s;
+    position: relative;
+}
+
+.learn-opt:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: var(--accent-light);
+    color: var(--accent);
+}
+
+.learn-opt.correct {
+    border-color: #16a34a;
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.learn-opt.wrong {
+    border-color: var(--danger);
+    background: #fff5f5;
+    color: var(--danger);
+}
+
+.learn-opt.disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.learn-opt-key {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+    font-family: monospace;
+}
+
+.learn-opt.correct .learn-opt-key {
+    background: #bbf7d0;
+    color: #15803d;
+}
+
+.learn-opt.wrong .learn-opt-key {
+    background: #fecaca;
+    color: #dc2626;
+}
+
+/* Type answer */
+.learn-type-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.learn-type-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.learn-type-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.learn-type-input.correct {
+    border-color: #16a34a;
+    background: #f0fdf4;
+}
+
+.learn-type-input.wrong {
+    border-color: var(--danger);
+    background: #fff5f5;
+}
+
+.learn-submit-btn {
+    align-self: flex-end;
+    padding: 10px 24px;
+    background: var(--accent);
+    color: white;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: filter var(--ease);
+}
+
+.learn-submit-btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.learn-submit-btn:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+
+/* Feedback */
+.learn-feedback {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    animation: slideIn .2s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.learn-feedback.correct {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1.5px solid #86efac;
+}
+
+.learn-feedback.wrong {
+    background: #fff5f5;
+    color: #dc2626;
+    border: 1.5px solid #fca5a5;
+}
+
+.learn-fb-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* Bottom stats */
+.learn-bottom-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Done screen */
+.learn-done {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+    max-width: 480px;
+    animation: fadeUp .4s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.learn-done-icon {
+    font-size: 60px;
+}
+
+.learn-done-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -.8px;
+}
+
+.learn-done-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.learn-done-ring {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 8px auto;
+}
+
+.learn-ring-svg {
+    width: 140px;
+    height: 140px;
+}
+
+.learn-done-ring span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.learn-done-stats {
+    display: flex;
+    gap: 16px;
+}
+
+.learn-stat {
+    padding: 12px 20px;
+    border-radius: var(--radius-lg);
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.learn-stat strong {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.learn-stat.green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.learn-stat.red {
+    background: #fff5f5;
+    color: var(--danger);
+}
+
+.learn-stat.blue {
+    background: var(--accent-light);
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .learn-card {
+        padding: 28px 24px;
+    }
+
+    .learn-term {
+        font-size: 26px;
+    }
+}

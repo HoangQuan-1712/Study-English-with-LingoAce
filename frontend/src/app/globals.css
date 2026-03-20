@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════
+   DESIGN TOKENS
+   ═══════════════════════════════════════ */
+:root {
+  --bg-page: #f6f7fb;
+  --bg-card: #ffffff;
+  --bg-sidebar: #ffffff;
+
+  --text-primary: #2e3856;
+  --text-secondary: #586380;
+  --text-muted: #939bb4;
+
+  --accent: #4255ff;
+  --accent-hover: #3344dd;
+  --accent-light: #e8eaff;
+
+  --success: #23b26d;
+  --warning: #ff9500;
+  --danger: #ff4b4b;
+
+  --border: #e8eaf2;
+  --border-strong: #d1d5e4;
+
+  --sidebar-width: 220px;
+  --header-height: 60px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  --shadow-sm: 0 1px 3px rgba(46, 56, 86, .08);
+  --shadow-md: 0 4px 16px rgba(46, 56, 86, .10);
+  --shadow-lg: 0 8px 32px rgba(46, 56, 86, .14);
+
+  --ease: 0.15s ease;
+}
+
+/* ═══════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* App shell */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 99px;
+}
+
+/* Page layout */
+.page-body {
+  padding: 36px 40px;
+  flex: 1;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -.4px;
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Shared buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: background var(--ease), transform .1s;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(.97);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border-radius: 20px;
+  padding: 0 20px;
+  height: 38px;
+  font-size: 14px;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0 16px;
+  height: 36px;
+  font-size: 14px;
+}
+
+.btn-ghost:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+/* Shared card */
+.card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .page-body {
+    padding: 20px 16px;
+  }
+}
+
+/* Study mode - khi không có sidebar */
+body:has(.study-shell) {
+  overflow: hidden;
+}
+
+/* ─── Dark mode ─── */
+[data-theme="dark"] {
+  --bg-page: #0f1117;
+  --bg-card: #1a1d27;
+  --border: rgba(255, 255, 255, .1);
+  --border-strong: rgba(255, 255, 255, .2);
+  --text-primary: #f1f2f6;
+  --text-secondary: #b2b8c8;
+  --text-muted: #6b7280;
+  --accent-light: rgba(66, 85, 255, .15);
+  --shadow: 0 4px 24px rgba(0, 0, 0, .4);
+}

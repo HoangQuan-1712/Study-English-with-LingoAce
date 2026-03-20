@@ -1,0 +1,43 @@
+/* ═══════════════════════════════
+   DESIGN TOKENS — chỉnh ở đây
+   để toàn bộ app đổi theo
+   ═══════════════════════════════ */
+:root {
+    /* Colors */
+    --bg-page: #f6f7fb;
+    --bg-card: #ffffff;
+    --bg-sidebar: #ffffff;
+
+    --text-primary: #2e3856;
+    --text-secondary: #586380;
+    --text-muted: #939bb4;
+
+    --accent: #4255ff;
+    --accent-hover: #3344dd;
+    --accent-light: #e8eaff;
+
+    --success: #23b26d;
+    --warning: #ff9500;
+    --danger: #ff4b4b;
+
+    --border: #e8eaf2;
+    --border-strong: #d1d5e4;
+
+    /* Layout */
+    --sidebar-width: 220px;
+    --header-height: 60px;
+
+    /* Shape */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    /* Shadow */
+    --shadow-sm: 0 1px 3px rgba(46, 56, 86, .08);
+    --shadow-md: 0 4px 16px rgba(46, 56, 86, .10);
+    --shadow-lg: 0 8px 32px rgba(46, 56, 86, .14);
+
+    /* Motion */
+    --ease: 0.15s ease;
+}

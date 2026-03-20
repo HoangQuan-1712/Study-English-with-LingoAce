@@ -1,0 +1,53 @@
+// PATH: backend/prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int            @id @default(autoincrement())
+  email        String         @unique
+  name         String?
+  password     String         @default("")
+  sets         StudySet[]
+  studySessions StudySession[]
+}
+
+model StudySet {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  color       String   @default("#4255ff")
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+  cards       Card[]
+  sessions    StudySession[]
+  @@map("studyset")
+}
+
+model Card {
+  id            Int      @id @default(autoincrement())
+  term          String   @db.Text
+  definition    String   @db.Text
+  pronunciation String?
+  setId         Int
+  studySet      StudySet @relation(fields: [setId], references: [id])
+  @@map("card")
+}
+
+model StudySession {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  setId     Int
+  mode      String   @default("flashcard")
+  score     Int      @default(0)
+  total     Int      @default(0)
+  duration  Int      @default(0)
+  studiedAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  set       StudySet @relation(fields: [setId], references: [id])
+  @@map("studysession")
+}
